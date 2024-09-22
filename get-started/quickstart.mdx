@@ -1,86 +1,112 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: "Quickstart"
+description: "Get started with Undrstnd Developers and integrate powerful AI capabilities into your projects. This guide will walk you through getting an API key, making your first API request, and checking model statuses."
 ---
 
 ## Setup your development
 
-Learn how to update your docs locally and deploy them to the public.
+The first step to unlocking world-class AI-powered applications is setting up your development environment with Undrstnd Developers.
 
-### Edit and preview
+### Get an API Key
+
+To begin using the Undrstnd Developers API, you’ll need an API key.
 
 <AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
+  <Accordion icon="lock" title="Create an Account">
+    Sign up for an account to access our platform and start building your AI
+    applications. You can create an account on our
+    [website](https://undrstnd-labs.com/register).
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
+  <Accordion icon="key" title="Generate an API Key">
+    Generate an API key to authenticate your requests and access our APIs. You
+    can find your API key in the
+    [dashboard](https://undrstnd-labs.com/dashboard/api-keys).
   </Accordion>
 </AccordionGroup>
 
-### Deploy your changes
+### Making Your First API Request
 
 <AccordionGroup>
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
+<Accordion icon="message-bot" title="HTTPie Example">
+  ```bash
+  http POST https://dev.undrstnd-labs.com/api \
+  x-api-key:YOUR_API_KEY_UNDRSTND \
+  stream=false \
+  modelId="MODEL_ID" \
+  messages:='[{"name": "system", "content": "Hello, how can I assist?", "role": "system"}, {"name": "user", "content": "What is the weather in San Francisco?", "role": "user"}]'
+  ```
 </Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
+<Accordion icon="rocket" title="cURL Example">
+    ```bash
+    curl -X POST https://dev.undrstnd-labs.com/api \
+      -H "x-api-key: YOUR_API_KEY_UNDRSTND" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "stream": false,
+        "modelId": "MODEL_ID",
+        "messages": [
+          {
+            "name": "system",
+            "content": "Hello, how can I help you?",
+            "role": "system"
+          },
+          {
+            "name": "user",
+            "content": "What is the weather like in San Francisco?",
+            "role": "user"
+          }
+        ]
+      }'
+  ```
+</Accordion>
+<Accordion title="Postman Example" icon="postman">
+  1. Open Postman and create a new POST request.
+  2. Enter the API endpoint `https://dev.undrstnd-labs.com/api`.
+  3. In the Headers tab, add:
+      - `x-api-key` with your API key.
+      - `Content-Type` with `application/json`.
+  4. In the Body tab, choose raw and select JSON format. Add this body:
+  ```json
+    {
+    "stream": false,
+    "modelId": "MODEL_ID",
+    "messages": [
+      {
+        "name": "system",
+        "content": "Hello, how can I help you?",
+        "role": "system"
+      },
+      {
+        "name": "user",
+        "content": "What is the weather like in San Francisco?",
+        "role": "user"
+      }
+    ]
+  }
+  ```
+  5. Click Send to make the request.
 </Accordion>
 
 </AccordionGroup>
 
-## Update your docs
+## Check Model Status
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+To view available models or check the status of an individual model, use the following endpoints:
 
 <CardGroup>
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
+<Card title="List All Models" icon="paintbrush" href="https://dev.undrstnd-labs.com/api/models/info">
+  Get a list of all available models and their details.
 </Card>
 
 <Card
-  title="Add API Endpoints"
+  title="Get Specific Model Info"
   icon="square-code"
-  href="/api-playground/configuration"
+  href="GET https://dev.undrstnd-labs.com/api/models/{MODEL_ID}/info"
 >
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
-
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
-
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
+  Retrieve detailed information about a specific model.
+  Replace {MODEL_ID} with the actual model ID to get detailed information about a specific model.
 </Card>
 
 </CardGroup>
