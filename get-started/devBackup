@@ -117,12 +117,32 @@ UNDRSTND_API_KEY='your_api_key_here'
   The model ID to use for the AI model.
 </ResponseField>
 
-<ResponseField name="max_tokens" type="integer" optional>
-  The max_tokens field specifies the maximum number of tokens that the AI model can generate in a single response. This helps control the length of the output. If not provided, the model will default to 512 tokens. Adjust this value based on the desired length of the response or the constraints of your application.
-</ResponseField>
-
 <ResponseField name="messages" type="array" required>
   An array of messages to send to the AI model.
 </ResponseField>
 
 
+## Troubleshooting
+
+Here's how to solve some common problems when working with the CLI.
+
+<AccordionGroup>
+  <Accordion title="Mintlify is not loading">
+    Update to Node v18. Run `mintlify install` and try again.
+  </Accordion>
+  <Accordion title="No such file or directory on Windows">
+Go to the `C:/Users/Username/.mintlify/` directory and remove the `mint`
+folder. Then Open the Git Bash in this location and run `git clone
+https://github.com/mintlify/mint.git`.
+
+Repeat step 3.
+
+  </Accordion>
+  <Accordion title="Getting an unknown error">
+    Try navigating to the root of your device and delete the ~/.mintlify folder.
+    Then run `mintlify dev` again.
+  </Accordion>
+</AccordionGroup>
+
+Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
+```

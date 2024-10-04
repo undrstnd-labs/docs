@@ -46,4 +46,38 @@ The first step to unlocking world-class AI-powered applications is setting up yo
   </Card>
 </CardGroup>
 
+## Make it yours
 
+Personalize your Undrstnd Developers experience by customizing your integration to meet your application's needs.
+
+<CardGroup cols={2}>
+  <Card
+    title="Choose Your Framework"
+    icon="palette"
+    href="https://undrstnd-labs.com/"
+  >
+    Integrate with popular frameworks like **Next.js**, **Express**, **Vue.js**,
+    and more.
+  </Card>
+  <Card
+    title="Use our API Playground"
+    icon="code"
+    href="https://undrstnd-labs.com#api-playground"
+  >
+    Test API requests and see how our endpoints respond in real-time.
+  </Card>
+  <Card
+    title="Add Interactive Features"
+    icon="screwdriver-wrench"
+    href="https://undrstnd-labs.com"
+  >
+    Add interactive features powered by AI for a smoother user experience.
+  </Card>
+  <Card
+    title="Join the Community"
+    icon="stars"
+    href="https://join.slack.com/t/undrsntd/shared_invite/zt-2plz9x05s-lDQEfx_xacJ9p1x6E~amuw"
+  >
+    Learn from others, share your use cases, and get inspired by fellow developers.
+  </Card>
+</CardGroup>

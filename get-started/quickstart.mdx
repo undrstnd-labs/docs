@@ -15,12 +15,12 @@ To begin using the Undrstnd Developers API, you’ll need an API key.
   <Accordion icon="lock" title="Create an Account">
     Sign up for an account to access our platform and start building your AI
     applications. You can create an account on our
-    [website](https://undrstnd-labs.com/register).
+    [website](https://dev.undrstnd-labs.com/register).
   </Accordion>
   <Accordion icon="key" title="Generate an API Key">
     Generate an API key to authenticate your requests and access our APIs. You
     can find your API key in the
-    [dashboard](https://undrstnd-labs.com/dashboard/api-keys).
+    [dashboard](https://dev.undrstnd-labs.com/dashboard/api-keys).
   </Accordion>
 </AccordionGroup>
 
@@ -30,21 +30,23 @@ To begin using the Undrstnd Developers API, you’ll need an API key.
 
 <Accordion icon="message-bot" title="HTTPie Example">
   ```bash
-  http POST https://dev.undrstnd-labs.com/api \
-  x-api-key:YOUR_API_KEY_UNDRSTND \
+  http POST https://api.undrstnd-labs.com/v1/chat/completions \
+  Authorization:Bearer YOUR_API_KEY_UNDRSTND \
   stream=false \
   modelId="MODEL_ID" \
+  max_tokens: 2500  \
   messages:='[{"name": "system", "content": "Hello, how can I assist?", "role": "system"}, {"name": "user", "content": "What is the weather in San Francisco?", "role": "user"}]'
   ```
 </Accordion>
 <Accordion icon="rocket" title="cURL Example">
     ```bash
-    curl -X POST https://dev.undrstnd-labs.com/api \
-      -H "x-api-key: YOUR_API_KEY_UNDRSTND" \
+    curl -X POST https://api.undrstnd-labs.com/v1/chat/completions \
+      -H "Auhorisation:Bearer YOUR_API_KEY_UNDRSTND" \
       -H "Content-Type: application/json" \
       -d '{
         "stream": false,
         "modelId": "MODEL_ID",
+        "max_tokens": 2500,
         "messages": [
           {
             "name": "system",
@@ -62,15 +64,17 @@ To begin using the Undrstnd Developers API, you’ll need an API key.
 </Accordion>
 <Accordion title="Postman Example" icon="quinscape">
   1. Open Postman and create a new POST request.
-  2. Enter the API endpoint `https://dev.undrstnd-labs.com/api`.
+  2. Enter the API endpoint `https://api.undrstnd-labs.com/v1/chat/completions`.
   3. In the Headers tab, add:
-      - `x-api-key` with your API key.
+      - `Auhorisation` with your API key.
       - `Content-Type` with `application/json`.
+
   4. In the Body tab, choose raw and select JSON format. Add this body:
   ```json
     {
     "stream": false,
     "modelId": "MODEL_ID",
+    "max_tokens": 2500,
     "messages": [
       {
         "name": "system",
@@ -98,18 +102,11 @@ To view available models or check the status of an individual model, use the fol
 
 <Card
   title="List All Models"
-  icon="paintbrush"
+  icon="square-code"
   href="https://dev.undrstnd-labs.com/api/models/info"
 >
   Get a list of all available models and their details.
 </Card>
 
-<Card
-  title="Get Specific Model Info"
-  icon="square-code"
-  href="https://dev.undrstnd-labs.com/api/models/{MODEL_ID}/info"
->
-  Retrieve detailed information about a specific model.
-</Card>
 
 </CardGroup>
