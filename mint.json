@@ -27,53 +27,56 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Documentation",
+      "url": "documentation/overview"
+    },
+    {
+      "name": "Resources",
+      "url": "resources"
+    },
+    {
+      "name": "Examples",
+      "url": "examples"
+    },
+    {
+      "name": "Releases",
+      "url": "releases"
     }
   ],
   "anchors": [
     {
-      "name": "Whitepaper",
-      "icon": "book-open-cover",
-      "url": "https://whitepaper.undrstnd-labs.com/"
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://dev.undrstnd-labs.com/blog"
     },
     {
-      "name": "Community",
+      "name": "Slack",
       "icon": "slack",
       "url": "https://join.slack.com/t/undrsntd/shared_invite/zt-2plz9x05s-lDQEfx_xacJ9p1x6E~amuw"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://dev.undrstnd-labs.com/blog"
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/undrstnd-labs"
+    },
+    {
+      "name": "Whitepaper",
+      "icon": "book-open-cover",
+      "url": "https://whitepaper.undrstnd-labs.com/"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
       "pages": [
-        "get-started/introduction",
-        "get-started/quickstart",
-        "get-started/development"
-      ]
-    },
-
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "documentation/overview",
+        "documentation/quickstart",
+        "documentation/models"
       ]
     }
   ],
   "footerSocials": {
+    "website": "https://twitter.com/undrstnd_labs",
     "github": "https://github.com/undrstnd-labs",
     "linkedin": "https://www.linkedin.com/company/undrstnd-labs"
   }
