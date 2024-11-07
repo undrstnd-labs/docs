@@ -1,50 +1,81 @@
 ---
 title: Overview
-icon: bolt
-description: "Welcome to Undrstnd Developers, the platform that provides lightning-fast, eco-friendly, and highly affordable AI solutions for developers"
+icon: graduation-cap
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.png"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.png"
-  alt="Hero Dark"
-/>
+## Undrstnd Developers platform
 
-## Overview of Undrstnd Developers
+<Card
+  title="Developer quickstart"
+  icon="bolt"
+>
+  <Icon icon="clock" size='12' /> 5 min
 
-At Undrstnd Developers, we focus on providing powerful Large Language Model (LLM) APIs and Data Source integration. With these features, you can easily access pre-trained models or upload your own data sources to train models tailored to your needs. Our platform is built for speed, sustainability, and affordability, helping developers deliver the best AI performance at a fraction of the cost.
+Set up your environment and make your first API request in minutes,
+[go to quickstart](/documentation/quickstart).
 
-Some of the key features that set us apart:
+  <br />
+  <CodeGroup>
+      ```java Curl
+      curl https://api.undrstnd-labs.com/v1/chat/completions
+        -H "Content-Type: application/json"
+        -H "Authorization: Bearer $UNDRSTND_API_KEY"
+        -d '{
+                "model": "llama3-8b-8192",
+                "messages": [
+                    {"role": "user", "content": "write a haiku about ai"}
+                ]
+            }'
+    ```
 
-- **Lightning-fast**: Our platform is built for speed, ensuring that you can access the data you need in real-time.
-- **Eco-friendly**: We are committed to sustainability, and our platform is designed to be as energy-efficient as possible.
-- **Highly affordable**: We offer competitive pricing plans that make it easy for developers to access the AI tools they need.
+    ```javascript Node.js
+    import OpenAI from "openai";
 
-## Setting up
+    const openai = new OpenAI(
+      api_key="$UNDRSTND_API_KEY",
+      base_url="https://api.undrstnd-labs.com/v1"
+    )
 
-The first step to unlocking world-class AI-powered applications is setting up your development environment with Undrstnd Developers.
+    const completion = await openai.chat.completions.create({
+        model: "llama3-8b-8192",
+        messages: [
+          {"role": "user", "content": "write a haiku about ai"}
+        ]
+    });
+    ```
+
+    ```python Python
+    from openai import OpenAI
+
+    client = OpenAI(
+      api_key="$UNDRSTND_API_KEY",
+      base_url="https://api.undrstnd-labs.com/v1"
+    )
+
+    completion = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[
+            {"role": "user", "content": "write a haiku about ai"}
+        ]
+    )
+    ```
+
+  </CodeGroup>
+</Card>
+
+## Meet the models
 
 <CardGroup cols={2}>
-  <Card
-    title="Create an Account"
-    icon="pen-to-square"
-    href="https://dev.undrstnd-labs.com/register"
-  >
-    Sign up for an account to access our platform and start building your AI
-    applications.
+  <Card title="Llama 3.1 70B Versatile">
+    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
   </Card>
-  <Card
-    title="Get API Key"
-    icon="image"
-    href="https://dev.undrstnd-labs.com/dashboard/api-keys"
-  >
-    Generate an API key to authenticate your requests and access our APIs.
+  <Card title="Second Card">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Card>
+  <Card title="Third Card">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+  </Card>
+  <Card title="Fourth Card">
+    Excepteur sint occaecat cupidatat non proident
   </Card>
 </CardGroup>
-
-

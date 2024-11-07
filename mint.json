@@ -28,7 +28,7 @@
   "tabs": [
     {
       "name": "Documentation",
-      "url": "documentation/overview"
+      "url": "documentation/introduction"
     },
     {
       "name": "Resources",
@@ -69,6 +69,7 @@
     {
       "group": "Get Started",
       "pages": [
+        "documentation/introduction",
         "documentation/overview",
         "documentation/quickstart",
         "documentation/models"
