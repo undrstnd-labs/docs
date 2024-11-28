@@ -1,0 +1,81 @@
+---
+title: Overview
+icon: graduation-cap
+---
+
+## Undrstnd Developers platform
+
+<Card
+  title="Developer quickstart"
+  icon="bolt"
+>
+  <Icon icon="clock" size='12' /> 5 min
+
+Set up your environment and make your first API request in minutes,
+[go to quickstart](/documentation/quickstart).
+
+  <br />
+  <CodeGroup>
+      ```java Curl
+      curl https://api.undrstnd-labs.com/v1/chat/completions
+        -H "Content-Type: application/json"
+        -H "Authorization: Bearer $UNDRSTND_API_KEY"
+        -d '{
+                "model": "llama3-8b-8192",
+                "messages": [
+                    {"role": "user", "content": "write a haiku about ai"}
+                ]
+            }'
+    ```
+
+    ```javascript Node.js
+    import OpenAI from "openai";
+
+    const openai = new OpenAI(
+      api_key="$UNDRSTND_API_KEY",
+      base_url="https://api.undrstnd-labs.com/v1"
+    )
+
+    const completion = await openai.chat.completions.create({
+        model: "llama3-8b-8192",
+        messages: [
+          {"role": "user", "content": "write a haiku about ai"}
+        ]
+    });
+    ```
+
+    ```python Python
+    from openai import OpenAI
+
+    client = OpenAI(
+      api_key="$UNDRSTND_API_KEY",
+      base_url="https://api.undrstnd-labs.com/v1"
+    )
+
+    completion = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[
+            {"role": "user", "content": "write a haiku about ai"}
+        ]
+    )
+    ```
+
+  </CodeGroup>
+</Card>
+
+## Meet the models
+
+<CardGroup cols={2}>
+  <Card title="Llama 3.1 70B Versatile">
+    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+  </Card>
+  <Card title="Second Card">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Card>
+  <Card title="Third Card">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+  </Card>
+  <Card title="Fourth Card">
+    Excepteur sint occaecat cupidatat non proident
+  </Card>
+</CardGroup>
